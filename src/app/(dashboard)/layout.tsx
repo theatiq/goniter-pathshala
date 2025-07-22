@@ -17,9 +17,7 @@ export default function DashboardLayout({
           className="flex items-center justify-center lg:justify-start p-4 gap-2"
         >
           <Image src="/logo.png" alt="Logo" width={32} height={32}></Image>
-          <span className="hidden lg:block">
-            গনিতের পাঠশালা Goniter Pathshala
-          </span>
+          <span className="hidden lg:block font-bold">গণিতের পাঠশালা</span>
         </Link>
         <Menu></Menu>
       </div>

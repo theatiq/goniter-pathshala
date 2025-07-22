@@ -1,11 +1,19 @@
-import React from 'react'
+import Announcement from "@/components/Announcement";
+import EventCalendar from "@/components/EventCalendar";
+import React from "react";
 
 const StudentPage = () => {
   return (
-    <div>
-      Student
+    <div className="p-4 flex gap-4 flex-col xl:flex-row">
+      {/* Left */}
+      <div className="w-full xl:w-2/3"></div>
+      {/* Right */}
+      <div className="w-full xl:w-1/3 flex flex-col gap-8">
+        <EventCalendar />
+        <Announcement />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default StudentPage
+export default StudentPage;
