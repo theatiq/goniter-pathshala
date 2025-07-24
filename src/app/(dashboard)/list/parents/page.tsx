@@ -43,7 +43,7 @@ const columns = [
 ];
 
 const ParentsListPage = () => {
-  const renderRow = (item: Student) => (
+  const renderRow = (item: Parent) => (
     <tr
       key={item.id}
       className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-lamaPurpleLight"
@@ -61,7 +61,7 @@ const ParentsListPage = () => {
         <div className="flex items-center gap-2">
           <Link href={"/list/teacher/${item.id}"}>
             <button className="w-7 h-7 flex items-center rounded-full bg-lamaSky">
-              <Image src={"/view.png"} alt="view" width={16} height={16} />
+              <Image src={"/edit.png"} alt="view" width={16} height={16} />
             </button>
           </Link>
           {role === "admin" && (
