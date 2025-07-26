@@ -1,3 +1,4 @@
+import BigCalendar from "@/components/BigCalendar";
 import Image from "next/image";
 
 const SingleTeacherPage = () => {
@@ -46,10 +47,70 @@ const SingleTeacherPage = () => {
             </div>
           </div>
           {/* Small Cards */}
-          <div className="flex-1 flex flex-col justify-between gap-4"></div>
+          <div className="flex-1 flex justify-between gap-4 flex-wrap">
+            {/* Card */}
+            <div className="bg-white rounded-md p-4 flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+              <Image
+                src={"/singleAttendance.png"}
+                alt=""
+                width={24}
+                height={24}
+                className="w-6 h-6"
+              />
+              <div>
+                <h1 className="text-xl font-semibold">95%</h1>
+                <span className="text-xs text-gray-500">Attendance</span>
+              </div>
+            </div>
+            {/* Card */}
+            <div className="bg-white rounded-md p-4 flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+              <Image
+                src={"/singleLesson.png"}
+                alt=""
+                width={24}
+                height={24}
+                className="w-6 h-6"
+              />
+              <div>
+                <h1 className="text-xl font-semibold">6</h1>
+                <span className="text-xs text-gray-500">Lessons</span>
+              </div>
+            </div>
+            {/* Card */}
+            <div className="bg-white rounded-md p-4 flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+              <Image
+                src={"/singleBranch.png"}
+                alt=""
+                width={24}
+                height={24}
+                className="w-6 h-6"
+              />
+              <div>
+                <h1 className="text-xl font-semibold">2</h1>
+                <span className="text-xs text-gray-500">Branches</span>
+              </div>
+            </div>
+            {/* Card */}
+            <div className="bg-white rounded-md p-4 flex gap-4 w-full md:w-[48%] xl:w-[45%] 2xl:w-[48%]">
+              <Image
+                src={"/singleClass.png"}
+                alt=""
+                width={24}
+                height={24}
+                className="w-6 h-6"
+              />
+              <div>
+                <h1 className="text-xl font-semibold">5</h1>
+                <span className="text-xs text-gray-500">Classes</span>
+              </div>
+            </div>
+          </div>
         </div>
         {/* Bottom */}
-        <div>Schedule</div>
+        <div className="mt-4 bg-white rounded-md p-4 h-[800px]">
+          <h1>Teacher&apos;s Schedule</h1>
+          <BigCalendar />
+        </div>
       </div>
       {/* Right */}
       <div className="w-full xl:w-1/3">Right</div>
