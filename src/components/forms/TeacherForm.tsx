@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import z from "zod";
+import InputFiled from "../InputFiled";
 
 const schema = z.object({
   userName: z
@@ -22,6 +23,8 @@ const schema = z.object({
   img: z.instanceof(File, { message: "Image is required" }),
 });
 
+type Inputs = z.infer<typeof schema>;
+
 const TeacherForm = ({
   type,
   data,
@@ -33,7 +36,7 @@ const TeacherForm = ({
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<Inputs>({
     resolver: zodResolver(schema),
   });
 
@@ -46,19 +49,13 @@ const TeacherForm = ({
       <span className="text-xs text-gray-400 font-medium">
         Authentication Information
       </span>
-      <div className="flex flex-col gap-2 w-full md:w-1/4">
-        <label className="text-xs text-gray-400">User Name</label>
-        <input
-          type="text"
-          {...register("userName")}
-          className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
-        />
-        {errors.userName?.message && (
-          <p className="text-xs text-red-400">
-            {errors.userName?.message.toString()}
-          </p>
-        )}
-      </div>
+      <InputFiled
+        label="Username"
+        name="userName"
+        defaultValue={data?.userName}
+        register={register}
+        error={errors?.userName}
+      />
       <span className="text-xs text-gray-400 font-medium">
         Personal Information
       </span>
