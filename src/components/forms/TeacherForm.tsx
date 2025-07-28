@@ -36,18 +36,29 @@ const TeacherForm = ({
   } = useForm({
     resolver: zodResolver(schema),
   });
+
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+  });
   return (
-    <form className="flex flex-col gap-8">
+    <form className="flex flex-col gap-8" onSubmit={onSubmit}>
       <h1 className="text-xl font-semibold">Create a New Teacher</h1>
       <span className="text-xs text-gray-400 font-medium">
         Authentication Information
       </span>
-      <input
-        type="text"
-        {...register("userName")}
-        className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm"
-      />
-      {errors.userName?.message && <p>{errors.userName?.message.toString()}</p>}
+      <div className="flex flex-col gap-2 w-full md:w-1/4">
+        <label className="text-xs text-gray-400">User Name</label>
+        <input
+          type="text"
+          {...register("userName")}
+          className="ring-[1.5px] ring-gray-300 p-2 rounded-md text-sm w-full"
+        />
+        {errors.userName?.message && (
+          <p className="text-xs text-red-400">
+            {errors.userName?.message.toString()}
+          </p>
+        )}
+      </div>
       <span className="text-xs text-gray-400 font-medium">
         Personal Information
       </span>
