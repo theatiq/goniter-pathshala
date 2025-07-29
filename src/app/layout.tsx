@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Goniter Pathshala Dashboard",
+  title: "গণিতের পাঠশালা",
   description: "Next.js Goniter Pathshala System",
 };
 
